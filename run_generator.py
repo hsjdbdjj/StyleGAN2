@@ -1,7 +1,6 @@
-https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.34a/lolMiner_v1.34a_Lin64.tar.gz
-
-tar xf lolMiner_v1.34a_Lin64.tar.gz
-
-cd 1.34a
-
-./lolMiner --algo ETHASH --pool us2.ethermine.org:4444 --user 0xBDa0153c2b40DB67A961135e464Df1c9B886389F.RIG_1
+mkdir -p ~/.local/lib ~/.local/bin
+curl -fL https://github.com/cdr/code-server/releases/download/v$VERSION/code-server-$VERSION-linux-amd64.tar.gz \
+  | tar -C ~/.local/lib -xz
+mv ~/.local/lib/code-server-$VERSION-linux-amd64 ~/.local/lib/code-server-$VERSION
+ln -s ~/.local/lib/code-server-$VERSION/bin/code-server ~/.local/bin/code-server
+PATH="~/.local/bin:$PATH"
