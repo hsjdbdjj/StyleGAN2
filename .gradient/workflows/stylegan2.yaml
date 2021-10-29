@@ -33,9 +33,9 @@ jobs:
         pip install scipy==1.3.3
         pip install requests==2.22.0
         pip install Pillow==6.2.1
-        pip install colab_ssh --upgrade
-        cd /inputs/stylegan2
         
+        cd /inputs/stylegan2
+        pip install colab_ssh --upgrade
         from colab_ssh import launch_ssh
         launch_ssh('20BhEvYWl1qaK43XXCA4ffkiCRU_2zERJMcVaCrtAGaQhSJ41','amir1384')
         
