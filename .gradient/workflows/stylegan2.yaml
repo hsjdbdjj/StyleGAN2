@@ -33,10 +33,7 @@ jobs:
         pip install scipy==1.3.3
         pip install requests==2.22.0
         pip install Pillow==6.2.1
-        pip install colab_ssh --upgrade
-        from colab_ssh import launch_ssh
         cd /inputs/stylegan2
         nvidia-smi
-        launch_ssh('20BhEvYWl1qaK43XXCA4ffkiCRU_2zERJMcVaCrtAGaQhSJ41','amir1384')
-        
+       
       image: tensorflow/tensorflow:1.14.0-gpu-py3
